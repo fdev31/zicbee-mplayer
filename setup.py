@@ -38,7 +38,7 @@ if sys.version_info[:2] < (2, 6):
         requirements.append( 'python-cjson>=1.0.5' )
 
 setup (
-        name='zicbee.player',
+        name='zicbee-player',
         version=VERSION,
         author='Fabien Devaux',
         author_email='fdev31@gmail.com',
@@ -65,28 +65,7 @@ It can be adapted to handle video too, hacking some bit of code.
         ''',
         keywords = 'database music tags metadata management',
         packages = find_packages(),
-        zip_safe = False,
-        package_data = {
-            'zicbee': [
-                'ui/web/templates/*.html',
-                'ui/web/static/*.css',
-                'ui/web/static/*.js',
-                'ui/web/static/pics/*.*',
-                'ui/web/static/pics/cmd/*.*',
-                'ui/gtk/*.glade'],
-            },
-
-        entry_points = {
-            "console_scripts": [
-                'zicdb = zicbee.core:startup',
-                'zicbee = zicbee.core:shell',
-                'zicserve = zicbee.core:serve [server]',
-#                'zicgui = zicbee.ui.gtk.player:main [player]'
-                ],
-            "setuptools.installation" : [
-                'eggsecutable = zicbee.core:startup'
-                ]
-            },
+#        zip_safe = False,
 
         install_requires = requirements,
 

@@ -450,7 +450,7 @@ class webplayer:
         sf = ScoreForm(True)
         tf = TagForm(True)
         af.fill(cook_jar)
-        yield unicode(render.player(af, sf, tf))
+        yield unicode(render.player(af, sf, tf, config.web_skin or 'default'))
 
     REQ_ = REQ_main # default page
 

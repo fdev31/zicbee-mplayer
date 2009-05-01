@@ -1,6 +1,0 @@
-syntax: glob
-*.orig
-*.pyo
-*.swp
-*.pyc
-*.swo

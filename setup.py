@@ -74,6 +74,10 @@ It can be adapted to handle video too, hacking some bit of code.
             server='web.py>=0.31',
             ),
 
+        entry_points = """
+        [zicbee.player]
+        mplayer = zicbee_player.mp:MPlayer
+        """,
         dependency_links = [
             'eggs',
             'http://box.gnux.info/zicbee/files/',

@@ -10,43 +10,16 @@ from setuptools import setup, find_packages
 
 VERSION='0.9-wip'
 
-if 'install' in sys.argv:
-    print """Warning:
-You will need to install some parts manually:
-
-If it can't build, try to comment the line:
-            'python-cjson>=1.0.5',
-
-and uncomment one of those (recommended alternative: simplejson):
-#            'simplejson>=1.7.3',
-#            'demjson>=1.1',
-
-Good luck !"""
-
-
-
-# also supported:
-#            'simplejson>=1.7.3',
-
-requirements = [ 'buzhug>=1.5', 'mutagen>=1.14' ]
-
-if sys.version_info[:2] < (2, 6):
-    # add cjson dependency
-    if os.name in ('nt', 'ce'):
-        requirements.append( 'demjson>=1.1' )
-    else:
-        requirements.append( 'python-cjson>=1.0.5' )
-
 setup (
         name='zicbee-mplayer',
         version=VERSION,
         author='Fabien Devaux',
         author_email='fdev31@gmail.com',
         url = 'http://box.gnux.info/zicbee/',
-        download_url='http://box.gnux.info/hg/index.cgi/zicbee/archive/wip.tar.bz2',
+        download_url='http://box.gnux.info/hg/index.cgi/zicbee_player/archive/wip.tar.bz2',
         license='BSD',
         platform='all',
-        description='A simple & powerful distributed Music database engine',
+        description='MPlayer backend for zicbee project',
         long_description='''
 ZicBee is a project grouping multiple applications to manage play and handle music databases.
 It takes ideas from Quodlibet and Mpd, both very good music mplayers with their own strengths.
@@ -65,19 +38,12 @@ It can be adapted to handle video too, hacking some bit of code.
         ''',
         keywords = 'database music tags metadata management',
         packages = find_packages(),
-#        zip_safe = False,
-
-        install_requires = requirements,
-
-        extras_require = dict(
-#            player='pyglet>=1.2',
-            server='web.py>=0.31',
-            ),
 
         entry_points = """
         [zicbee.player]
         mplayer = zicbee_mplayer.mp:MPlayer
         """,
+
         dependency_links = [
             'eggs',
             'http://box.gnux.info/zicbee/files/',

@@ -76,7 +76,7 @@ It can be adapted to handle video too, hacking some bit of code.
 
         entry_points = """
         [zicbee.player]
-        mplayer = zicbee_player.mp:MPlayer
+        mplayer = zicbee_mplayer.mp:MPlayer
         """,
         dependency_links = [
             'eggs',

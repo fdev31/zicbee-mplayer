@@ -38,7 +38,7 @@ if sys.version_info[:2] < (2, 6):
         requirements.append( 'python-cjson>=1.0.5' )
 
 setup (
-        name='zicbee-player',
+        name='zicbee-mplayer',
         version=VERSION,
         author='Fabien Devaux',
         author_email='fdev31@gmail.com',

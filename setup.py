@@ -16,7 +16,7 @@ setup (
         author='Fabien Devaux',
         author_email='fdev31@gmail.com',
         url = 'http://box.gnux.info/zicbee/',
-        download_url='http://box.gnux.info/hg/index.cgi/zicbee_player/archive/wip.tar.bz2',
+        download_url='http://box.gnux.info/hg/index.cgi/zicbee-player/archive/wip.tar.bz2',
         license='BSD',
         platform='all',
         description='MPlayer backend for zicbee project',
@@ -72,7 +72,7 @@ It can be adapted to handle video too, hacking some bit of code.
                 'Topic :: Software Development :: Libraries :: Python Modules',
                 'Topic :: Multimedia :: Sound/Audio :: Players',
                 'Topic :: Multimedia :: Sound/Audio :: Players :: MP3',
-                'Topic :: Text Processing :: Markup'
+                'Topic :: Text Processing :: Markup',
                 'Topic :: Utilities',
                 ],
 

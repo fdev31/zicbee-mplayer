@@ -4,32 +4,42 @@ __all__ = ['Player']
 from .mp import MPlayer
 
 class Player(MPlayer):
-    # close() # closes the player
-    # quit()
-    # wait()
-    # set_cache(size)
-    # loadfile(filename)
-    # volume(value(0-100))
-    # seek(val(seconds))
-    # respawn() # restarts the process (in case of error)
-    # pause() # toggles pause
-# to rename:
-    # ._cur_song_pos
-    # ._paused
-    # ._prop_stream_pos
+    def set_cache(self, val):
+        """ Sets the cache value in kilobytes """
+        MPlayer.set_cache(val)
 
-# generic player stuff (return to zicbee core!!)
-    # fetch_playlist
-    # delete_entry
-    # move_entry
-    # playlist_change
-    # shuffle
-    # clear
-    # select
-    # tag
-    # rate
-    # .playlist
-    # ._position (to rename also)
-    # .selected
-    pass
+    def volume(self, val):
+        """ Sets volume [0-100] """
+        MPlayer.volume(int(val))
+
+    def seek(self, val):
+        """ Seeks specified number of seconds (positive or negative) """
+        MPlayer.seek(int(val))
+
+    def pause(self):
+        """ Toggles pause mode """
+        MPlayer.pause(self)
+
+    def respawn(self):
+        """ Restarts the player """
+        MPlayer.respawn(self)
+
+    def load(self, uri):
+        """ Loads the specified URI """
+        MPlayer.loadfile(self, uri)
+
+    def quit(self):
+        """ De-initialize player and wait for it to shut down """
+        try:
+            MPlayer.quit(self)
+        except Exception, e:
+            print "E: %s"%e
+        finally:
+            MPlayer.wait(self)
+
+    @property
+    def position(self):
+        """ returns the stream position, in seconds """
+        return self.prop_stream_pos/10000
+
 

@@ -6,15 +6,15 @@ from .mp import MPlayer
 class Player(MPlayer):
     def set_cache(self, val):
         """ Sets the cache value in kilobytes """
-        MPlayer.set_cache(val)
+        MPlayer.set_cache(self, val)
 
     def volume(self, val):
         """ Sets volume [0-100] """
-        MPlayer.volume(int(val))
+        MPlayer.volume(self, int(val))
 
     def seek(self, val):
         """ Seeks specified number of seconds (positive or negative) """
-        MPlayer.seek(int(val))
+        MPlayer.seek(self, int(val))
 
     def pause(self):
         """ Toggles pause mode """
@@ -40,6 +40,7 @@ class Player(MPlayer):
     @property
     def position(self):
         """ returns the stream position, in seconds """
-        return self.prop_stream_pos/10000
+        p = self.prop_stream_pos
+        return None if p is None else p/10000
 
 

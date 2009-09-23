@@ -2,8 +2,7 @@
 import os
 import select
 import subprocess
-from zicbee_lib.debug import debug_enabled as DEBUG
-DEBUG=False
+DEBUG = bool(os.environ.get('DEBUG_MPLAYER', False))
 
 class MPlayer(object):
     ''' A class to access a slave mplayer process

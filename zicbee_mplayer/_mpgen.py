@@ -7,7 +7,7 @@ class_code = """# Access MPlayer from python
 import os
 import select
 import subprocess
-from zicbee_lib.debug import debug_enabled as DEBUG
+DEBUG = bool(os.environ.get('DEBUG_MPLAYER', False))
 
 class MPlayer(object):
     ''' A class to access a slave mplayer process

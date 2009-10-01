@@ -41,6 +41,9 @@ class Player(MPlayer):
     def position(self):
         """ returns the stream position, in seconds """
         p = self.prop_stream_pos
-        return None if p is None else p/10000
+        try:
+            return None if p is None else p/10000
+        except TypeError: # got a string
+            return 0
 
 

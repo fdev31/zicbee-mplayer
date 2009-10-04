@@ -8,7 +8,9 @@ except ImportError:
 	use_setuptools()
 from setuptools import setup, find_packages
 
-VERSION='0.9-wip'
+sys.path.insert(0, '.')
+import zicbee_mplayer
+VERSION=zicbee_mplayer.__version__
 
 setup (
         name='zicbee-mplayer',
@@ -16,25 +18,12 @@ setup (
         author='Fabien Devaux',
         author_email='fdev31@gmail.com',
         url = 'http://zicbee.gnux.info/',
-        download_url='http://zicbee.gnux.info/hg/index.cgi/zicbee-player/archive/wip.tar.bz2',
+        download_url='http://zicbee.gnux.info/hg/index.cgi/zicbee-mplayer/archive/default.tar.bz2',
         license='BSD',
         platform='all',
         description='MPlayer backend for zicbee project',
         long_description='''
-ZicBee is a project grouping multiple applications to manage play and handle music databases.
-It takes ideas from Quodlibet and Mpd, both very good music mplayers with their own strengths.
-
-For now there is a Swiss-army knife tool: zicdb
-
-Some plugins for quodlibet has also be developed. ZicBee is fast,
-portable (but not very ported...) and flexible.
-
-While the project is stable and usable (there are online docs and a nice www gui),
-it's mostly interesting for hackers and developers from now, I didn't confront to real users yet :P
-
-See features list, it's mostly handy for people with large databases,
-with optionally multiple computers.
-It can be adapted to handle video too, hacking some bit of code.
+        With this package you can play your music in zicbee if mplayer is installed on your system
         ''',
         keywords = 'database music tags metadata management',
         packages = find_packages(),

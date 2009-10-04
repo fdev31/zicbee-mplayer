@@ -1,5 +1,5 @@
-# TODO: export fetch_playlist & playlist handling out of player class
 __all__ = ['Player']
+__version__ = '0.9'
 
 from .mp import MPlayer
 

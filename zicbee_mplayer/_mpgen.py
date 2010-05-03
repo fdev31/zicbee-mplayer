@@ -74,7 +74,7 @@ class MPlayer(object):
         ret = self._readlines(0.01) # Flush
         if DEBUG:
             print "FLUSH LINES:", ret
-        cmd = '%s%s%s\\n'%(name,
+        cmd = 'pausing_keep %s%s%s\\n'%(name,
                 ' ' if args else '',
                 ' '.join(repr(a) for a in args)
                 )
